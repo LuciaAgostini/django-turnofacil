@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Turno</title>
+</head>
+<body>
+
+    <h1>Eliminar Turno</h1>
+
+    <p>
+        ¿Seguro que querés eliminar el turno de
+        {{ turno.cliente }}?
+    </p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <button type="submit">
+            Eliminar
+        </button>
+
+    </form>
+
+</body>
+</html>

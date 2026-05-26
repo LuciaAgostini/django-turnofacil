@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Turno</title>
+</head>
+<body>
+
+    <h1>Formulario de Turno</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Guardar
+        </button>
+
+    </form>
+
+</body>
+</html>

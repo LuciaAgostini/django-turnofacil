@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Turnos</title>
+</head>
+<body>
+
+    <h1>Turnos registrados</h1>
+
+    <a href="/turnos/crear/">
+        Crear turno
+    </a>
+
+    <hr>
+
+    {% for turno in turnos %}
+
+        <h3>{{ turno.cliente }}</h3>
+
+        <p>
+            Fecha: {{ turno.fecha }}
+        </p>
+
+        <p>
+            Hora: {{ turno.hora }}
+        </p>
+
+        <p>
+            Profesional:
+            {{ turno.profesional }}
+        </p>
+
+        <p>
+            {{ turno.descripcion }}
+        </p>
+
+        <a href="/turnos/editar/{{ turno.id }}/">
+            Editar
+        </a>
+
+        <br>
+
+        <a href="/turnos/eliminar/{{ turno.id }}/">
+            Eliminar
+        </a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
