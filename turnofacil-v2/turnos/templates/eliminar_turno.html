@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar Turno{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+        <div class="card shadow border-danger">
+
+            <div class="card-header bg-danger text-white">
+                Confirmar Eliminación
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    ¿Seguro que desea eliminar este turno?
+                </p>
+
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    <button type="submit"
+                            class="btn btn-danger">
+                        Eliminar
+                    </button>
+
+                    <a href="{% url 'lista_turnos' %}"
+                       class="btn btn-secondary">
+                        Cancelar
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

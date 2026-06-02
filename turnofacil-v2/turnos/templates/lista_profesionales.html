@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Profesionales{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Profesionales</h2>
+</div>
+
+<div class="row">
+
+    {% for profesional in profesionales %}
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                {% if profesional.imagen %}
+
+                    <img
+                        src="{{ profesional.imagen.url }}"
+                        class="card-img-top"
+                        alt="{{ profesional.nombre }}"
+                        style="height:300px; object-fit:cover;"
+                    >
+
+                {% else %}
+
+                    <div class="text-center p-5 bg-light">
+                        Sin imagen
+                    </div>
+
+                {% endif %}
+
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        {{ profesional.nombre }}
+                    </h5>
+
+                    <p class="card-text">
+                        <strong>Especialidad:</strong>
+                        {{ profesional.especialidad }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <div class="col-12">
+
+            <div class="alert alert-info">
+                No hay profesionales cargados.
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
