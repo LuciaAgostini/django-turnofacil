@@ -52,9 +52,13 @@
                         Hola, {{ user.username }}
                     </span>
 
-                    <a class="nav-link" href="/accounts/logout/">
-                        Salir
-                    </a>
+                    <form action="/accounts/logout/" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit"
+                                class="nav-link btn btn-link text-white border-0">
+                            Salir
+                        </button>
+                    </form>
 
                 {% else %}
 

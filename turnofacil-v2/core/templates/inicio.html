@@ -16,9 +16,23 @@
             Sistema de gestión de turnos desarrollado con Django.
         </p>
 
-        <a href="/turnos/" class="btn btn-primary btn-lg">
-            Ver Turnos
-        </a>
+        {% if user.is_authenticated %}
+
+            <a href="/turnos/" class="btn btn-primary btn-lg">
+                Ver Turnos
+            </a>
+
+        {% else %}
+
+            <a href="/accounts/login/" class="btn btn-primary btn-lg me-2">
+                Iniciar sesión
+            </a>
+
+            <a href="/accounts/registro/" class="btn btn-success btn-lg">
+                Registrarme
+            </a>
+
+        {% endif %}
 
     </div>
 

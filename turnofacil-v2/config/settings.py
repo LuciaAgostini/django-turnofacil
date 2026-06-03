@@ -75,6 +75,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'es-ar'
+
 TIME_ZONE = 'America/Argentina/Cordoba'
 
 USE_I18N = True
@@ -87,3 +88,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirección después de iniciar sesión
+LOGIN_REDIRECT_URL = '/'
+
+# Redirección después de cerrar sesión
+LOGOUT_REDIRECT_URL = '/'
